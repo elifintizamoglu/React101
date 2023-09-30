@@ -21,7 +21,7 @@
 // önce user sonra post çekilir 
 // bunlar asenkron işlemler, düzeni sağlamak için iç içe yazdık
 
-// import fetch from "node-fetch";
+ import fetch from "node-fetch";
 // fetch("https://jsonplaceholder.typicode.com/users/1")
 // .then((data) => data.json())
 // .then((user) => {
@@ -56,11 +56,43 @@
 // axios ile veri çekme
 // axios bize data adı altında bir field getirir
 // her birinin adı data olduğu için yeniden isimlendiririz
+
 import axios from "axios";
-(async ()=>{
-    const {data: user1} = await axios("https://jsonplaceholder.typicode.com/users/1");
-    const {data: post1} = await axios("https://jsonplaceholder.typicode.com/posts/1");
+// (async ()=>{
+//     const {data: user1} = await axios("https://jsonplaceholder.typicode.com/users/1");
+//     const {data: post1} = await axios("https://jsonplaceholder.typicode.com/posts/1");
         
-    console.log(user1);
-    //console.log("post1" , post1); 
-})();
+//     console.log(user1);
+//     //console.log("post1" , post1); 
+// })();
+
+
+// kendimiz then ile kullanacağımız fonklar yaratırız?
+// resolve ise then'e düşer, reject ise catch'e düşer
+
+// const getComments = (number) => {
+//     return new Promise((resolve, reject) => {
+//         if(number === 1){
+//             resolve({text: "Selam"});
+//         }
+//         reject("Bir problem oluştu.")
+//     }); 
+// };
+
+// getComments(2)
+//   .then((data) => console.log(data))
+//   .catch((e) => console.log(e));
+
+
+
+// promise ile data getirme
+const getUser = (number) => {
+    return new Promise(async(resolve, reject) => {
+        const {data} = await axios("https://jsonplaceholder.typicode.com/users/1");
+        resolve(data)
+    }); 
+};
+
+getUser()
+  .then((data) => console.log(data))
+  .catch((e) => console.log(e));
