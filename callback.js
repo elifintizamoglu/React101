@@ -43,10 +43,24 @@
 
 
 // anonim fonksiyon ile tanımlama 
-(async ()=>{
-    const users = await(await fetch("https://jsonplaceholder.typicode.com/users/1")).json();
-    const post1 = await(await fetch("https://jsonplaceholder.typicode.com/posts/1")).json();
+// (async ()=>{
+//     const users = await(await fetch("https://jsonplaceholder.typicode.com/users/1")).json();
+//     const post1 = await(await fetch("https://jsonplaceholder.typicode.com/posts/1")).json();
     
-    console.log(users);
-    console.log("post1" , post1); 
+//     console.log(users);
+//     console.log("post1" , post1); 
+// })();
+
+
+
+// axios ile veri çekme
+// axios bize data adı altında bir field getirir
+// her birinin adı data olduğu için yeniden isimlendiririz
+import axios from "axios";
+(async ()=>{
+    const {data: user1} = await axios("https://jsonplaceholder.typicode.com/users/1");
+    const {data: post1} = await axios("https://jsonplaceholder.typicode.com/posts/1");
+        
+    console.log(user1);
+    //console.log("post1" , post1); 
 })();
