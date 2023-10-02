@@ -1,11 +1,20 @@
 import './App.css';
-import Header from './components/Header';
+
+const name = "Elif";
+const isLoggedIn = false;
 
 function App(){
   return(
-    <div>
-      <Header />
-    </div>
+    <>
+      <h1>
+        { isLoggedIn &&  `Benim Adım ${name}`}
+        { !isLoggedIn && `Giriş Yapınız!`}
+
+        { isLoggedIn 
+          ? `Adım ${name}`
+          : `Giriş Yap!`}
+      </h1>
+    </>
   )
 }
  export default App;
