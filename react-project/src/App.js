@@ -1,20 +1,12 @@
 import './App.css';
+import User from "./components/User";
 
-const name = "Elif";
-const isLoggedIn = false;
-
-function App(){
-  return(
+function App() {
+  return (
     <>
-      <h1>
-        { isLoggedIn &&  `Benim Adım ${name}`}
-        { !isLoggedIn && `Giriş Yapınız!`}
-
-        { isLoggedIn 
-          ? `Adım ${name}`
-          : `Giriş Yap!`}
-      </h1>
+      <User name="Elif" surname="Gezen" isLoggedIn={false} />
     </>
-  )
+  );
 }
- export default App;
+
+export default App;
