@@ -19,9 +19,13 @@ function App() {
       <User
         name="Elif"
         surname="Gezen"
-        isLoggedIn={false}
+        isLoggedIn={true}
         age={24}
         friends={otherFriends}
+        address={{
+          title:"Zeytinburnu/İstanbul",
+          zip:12345
+        }}
       />
     </>
   );
