@@ -1,13 +1,23 @@
-function User(props) {
+function User({ name, surname, isLoggedIn, age, friends }) {
     return (
-        <h1>
+        <>
+            <h1>
+                {
+                    isLoggedIn
+                        ? `${name} ${surname} (${age})`
+                        : "Giriş Yapmadınız."
+                }
+            </h1>
             {
-                props.isLoggedIn 
-                ? `${props.name} ${props.surname}`
-                : "Giriş Yapmadınız."
+                friends.map((friend) => (
+                    <div key={friend.id}>
+                        {friend.id} - {friend.name}
+                    </div>
+                ))
             }
-        </h1>
+        </>
     );
+
 }
 
 export default User;
