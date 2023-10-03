@@ -4,6 +4,7 @@ function App() {
 
   const [name, setName] = useState("Elif");
   const [age, setAge] = useState(24);
+  const [friends, setFriends] = useState(["Büşra", "Aygül"]);
 
   return (
     <div className="App">
@@ -11,6 +12,19 @@ function App() {
       <h2>{age}</h2>
       <button onClick={() => setName("Ayşe")}>Change Name</button>
       <button onClick={() => setAge(25)}>Change Age</button>
+
+      <hr />
+      <br></br>
+
+
+      <h2>Friends</h2>
+      {friends.map((friend, index) => (
+        <div key={index}>{friend}</div>
+      ))}
+
+    
+      <button onClick={() => setFriends([...friends, "İlayda"])}>Add New Friend</button>
+
 
     </div>
   );
