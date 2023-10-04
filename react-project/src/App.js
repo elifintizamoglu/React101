@@ -1,33 +1,55 @@
-import { useState, useEffect } from "react";
+import UnmountExercise from "./components/UnmountExercise";
+import { useState } from "react";
 
 function App() {
 
-  const [number, setNumber] = useState(0);
-  const [name, setName] = useState("Elif");
+  const [isVisible, setIsVisible] = useState(true);
 
-
-  useEffect(()=>{
-    console.log("Number State ya da Name State güncellendi");
-  },[number, name]);
-
-  useEffect(()=>{
-    console.log("Component mount edildi!");
-  },[])
-
-  return (
-    <div className="App">
-      <h1>{number}</h1>
-      <button onClick={()=>setNumber(number+1)}>Click</button>
-
-      <hr />
-      <h1>{name}</h1>
-      <button onClick={()=>setName("Ayşe")}>Click</button>
-
-    </div>
-  );
+  return <div className="App">
+    {isVisible && <UnmountExercise />}
+    <br />
+    <button onClick={() =>setIsVisible(!isVisible)}>Toggle</button>
+  </div>
 }
 
 export default App;
+
+
+
+
+////////////////////////////////
+// ----------------------- useEffect----------------------
+
+// import { useState, useEffect } from "react";
+
+// function App() {
+
+//   const [number, setNumber] = useState(0);
+//   const [name, setName] = useState("Elif");
+
+
+//   useEffect(()=>{
+//     console.log("Number State ya da Name State güncellendi");
+//   },[number, name]);
+
+//   useEffect(()=>{
+//     console.log("Component mount edildi!");
+//   },[])
+
+//   return (
+//     <div className="App">
+//       <h1>{number}</h1>
+//       <button onClick={()=>setNumber(number+1)}>Click</button>
+
+//       <hr />
+//       <h1>{name}</h1>
+//       <button onClick={()=>setName("Ayşe")}>Click</button>
+
+//     </div>
+//   );
+// }
+
+// export default App;
 
 
 ///////////////////////////////////////////////////////////////////
