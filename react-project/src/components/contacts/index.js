@@ -6,15 +6,15 @@ import Form from './form';
 function Contacts() {
   const [contacts, setContacts] = useState([]);
 
-  useEffect(()=> {
+  useEffect(() => {
     console.log(contacts);
-  },[contacts]);
+  }, [contacts]);
 
 
   return (
     <div>
-      <List />
-      <Form addContact={setContacts} contacts={contacts}/>
+      <List contacts={contacts} />
+      <Form addContact={setContacts} contacts={contacts} />
     </div>
   )
 }
