@@ -1,19 +1,35 @@
-import UnmountExercise from "./components/UnmountExercise";
-import { useState } from "react";
+import './App.css';
+import Contacts from './components/contacts';
 
 function App() {
-
-  const [isVisible, setIsVisible] = useState(true);
-
-  return <div className="App">
-    {isVisible && <UnmountExercise />}
-    <br />
-    <button onClick={() =>setIsVisible(!isVisible)}>Toggle</button>
-  </div>
+  return (
+    <div className='App'>
+      <Contacts />
+    </div>
+  );
 }
 
 export default App;
 
+
+////////////////////////////////////////////
+// -------------- Component Unmount --------------------------
+
+// import UnmountExercise from "./components/UnmountExercise";
+// import { useState } from "react";
+
+// function App() {
+
+//   const [isVisible, setIsVisible] = useState(true);
+
+//   return <div className="App">
+//     {isVisible && <UnmountExercise />}
+//     <br />
+//     <button onClick={() =>setIsVisible(!isVisible)}>Toggle</button>
+//   </div>
+// }
+
+// export default App;
 
 
 
